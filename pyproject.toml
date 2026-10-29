@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finite-channel-privacy"
+version = "0.1.0"
+description = "Exact rational privacy profiles and independent composition for finite binary-input channels"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9", "matplotlib>=3.9,<4"]
+
+[project.scripts]
+privacy-audit = "finite_privacy.cli:main"
+privacy-demo = "finite_privacy.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
